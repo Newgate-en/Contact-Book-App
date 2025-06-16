@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <br>
+    <form id="editForm">
+        <label for="firstname">First name: <input type="text" name="firstname" id="firstname"></label><br>
+        <br>
+        <label for="lastname">Last name: <input type="text" name="lastname" id="lastname"></label><br>
+        <br>
+        <label for="mobile">Mobile: <input type="text" name="mobile" id="mobile"></label><br>
+        <br>
+        <label for="email">Email: <input type="email" name="email" id="email"></label><br>
+        <br>
+        <label for="avatar">Select file: <input type="file" name="avatar" id="avatar"></label><br>
+        <br>
+        <button type="submit" id="submitForm">Submit</button>
+    </form>
+    <br>
+    <button id="homeLink" type="button">Home</button>
+
+    <script src="config.js"></script>
+    <script>
+    //Add contact script
+
+    document.getElementById("submitForm").addEventListener('click', submitForm);
+    document.getElementById("homeLink").addEventListener('click', homeLink);
+
+    function submitForm(e) {
+        e.preventDefault();
+
+        const form = new FormData(document.querySelector('#editForm'));
+        form.append('apiKey', apiKey);
+
+        fetch(rootPath + 'controller/insert-contact/', {
+            method: 'POST',
+            headers: {'Accept': 'application/json, *.*'},
+            body: form
+        })
+        .then(function(response){
+            return response.text();
+        })
+        .then(function(data){
+            if(data == "1"){
+                alert("Contact added.");
+                homeLink();
+            } else {
+                alert(data);
+                homeLink();
+            }
+        })
+    }
+
+    function homeLink() {
+        window.open("index.html", "_self");
+        console.log("Home button clicked")
+    }
+
+    </script>
+</body>
+</html>

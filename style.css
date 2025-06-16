@@ -1,0 +1,100 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Center content */
+form, #avatarImage, .container {
+    max-width: 400px;
+    margin: 30px auto 0 auto;
+    background: #fff;
+    padding: 24px 32px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+#avatarImage {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#avatarImage img {
+    border-radius: 50%;
+    border: 2px solid #e0e0e0;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"] {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+input[readonly] {
+    background: #f0f0f0;
+    color: #888;
+}
+
+button {
+    background: #7c3aed;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #5b21b6;
+}
+
+#editContact, #deleteContact {
+    background: #f59e42;
+    color: #fff;
+}
+
+#deleteContact {
+    background: #ef4444;
+}
+
+#editContact:hover {
+    background: #ea580c;
+}
+
+#deleteContact:hover {
+    background: #b91c1c;
+}
+
+@media (max-width: 600px) {
+    form, #avatarImage, .container {
+        max-width: 95vw;
+        padding: 16px 6vw;
+    }
+    button {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+}
