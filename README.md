@@ -13,7 +13,7 @@ A simple web-based Contact Book application that allows you to add, edit, and de
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/YOUR-USERNAME/REPO-NAME.git
+   git clone https://github.com/Newgate-en/Contact-Book-App.git
    ```
 
 2. **Navigate to the project folder:**
